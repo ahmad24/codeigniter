@@ -5,6 +5,7 @@ class Pages extends CI_Controller {
     public function view($page = 'about')
     {
         
+        
         if ( ! file_exists('application/views/pages/'.$page.'.php'))
         {
             // Whoops, we don't have a page for that!
@@ -18,5 +19,9 @@ class Pages extends CI_Controller {
         $this->load->view('templates/footer', $data);
         
 
+    }
+    public function index($page = 'about')
+    {
+        $this->view($page);
     }
 }
